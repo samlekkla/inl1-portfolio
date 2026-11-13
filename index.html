@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sam Lekkla | Blockchainutvecklare under utbildning</title>
+  <meta name="description" content="Portfolio för Sam Lekkla, blockchainutvecklare under utbildning med bakgrund som junior molnadministratör i Stockholm. Projekt inom Azure, Infrastructure as Code, FinOps och hybrid identitet.">
+
+  <!-- Preconnect gör att anslutningen till typsnittsservern startar direkt, så att texten byter typsnitt snabbare -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Skip-länken låter tangentbordsanvändare hoppa förbi menyn direkt till innehållet -->
+  <a class="skip-link" href="#main">Hoppa till huvudinnehållet</a>
+
+  <header class="site-header" id="top">
+    <div class="site-header__inner">
+      <a class="brand" href="#top">Sam Lekkla<span class="brand__tag"> / portfolio</span></a>
+
+      <!-- aria-label skiljer huvudmenyn från andra länkgrupper för skärmläsare -->
+      <nav class="main-nav" aria-label="Huvudmeny">
+        <ul class="main-nav__list">
+          <li><a href="#om-mig">Om mig</a></li>
+          <li><a href="#projekt">Projekt</a></li>
+          <li><a href="#kompetenser">Kompetenser</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- main är också grid-behållaren för sidlayouten. Sidofältet (aside) ligger i main eftersom kompetenserna hör till huvudinnehållet -->
+  <main id="main" class="layout">
+
+    <!-- === Intro === -->
+    <section class="hero" aria-labelledby="hero-titel">
+      <p class="hero__eyebrow">Från molndrift till blockkedjor</p>
+      <h1 id="hero-titel">Sam Lekkla</h1>
+      <p class="hero__role">Blockchainutvecklare under utbildning</p>
+      <p class="hero__lead">
+        Jag bygger säker och automatiserad infrastruktur i molnet och lär mig nu att skriva
+        smarta kontrakt. Två världar där allt handlar om system som går att lita på.
+      </p>
+
+      <!-- En beskrivningslista passar eftersom varje rad är ett par av etikett och värde -->
+      <dl class="status">
+        <div class="status__item">
+          <dt>Bakgrund</dt>
+          <dd>Junior molnadministratör</dd>
+        </div>
+        <div class="status__item">
+          <dt>Fokus nu</dt>
+          <dd>Solidity och smarta kontrakt</dd>
+        </div>
+        <div class="status__item">
+          <dt>Region</dt>
+          <dd>Stockholm <span class="status__code">swedencentral</span></dd>
+        </div>
+      </dl>
+
+      <div class="hero__actions">
+        <a class="button" href="#projekt">Se mina projekt</a>
+        <a class="button button--ghost" href="#kontakt">Kontakta mig</a>
+      </div>
+    </section>
+
+    <!-- === Om mig === -->
+    <section id="om-mig" class="section about" aria-labelledby="om-mig-titel">
+      <h2 id="om-mig-titel">Om mig</h2>
+
+      <div class="about__body">
+        <!-- width och height gör att webbläsaren reserverar plats innan bilden laddats, så att sidan inte hoppar.
+             loading="lazy" fungerar här eftersom bilden ligger under introt och inte syns direkt på mobil -->
+        <img class="about__photo" src="images/profil.jpg" alt="Porträtt av Sam Lekkla i mörk kavaj och vit skjorta, sittande vid ett skrivbord i en ljus kontorsmiljö" width="800" height="800" loading="lazy" decoding="async">
+
+        <div class="about__text">
+          <p>
+            Jag heter Sam och har arbetat som junior molnadministratör. Där lärde jag mig att drifta,
+            övervaka och säkra infrastruktur i Azure, och att automatisera allt som går att automatisera.
+          </p>
+          <p>
+            Nu utbildar jag mig till blockchainutvecklare. Säkerhet, spårbarhet och system som ska gå
+            att lita på är lika viktiga i en blockkedja som i en molnmiljö, så min bakgrund ger mig en
+            bra grund. Just nu lär jag mig Solidity och hur smarta kontrakt testas och driftsätts.
+          </p>
+          <p>
+            Jag gillar att förstå hur saker fungerar på djupet, från nätverket och servern hela vägen
+            upp till kontraktet som körs på kedjan.
+          </p>
+          <p>
+            Mycket av min inläsning gör jag i
+            <!-- rel="noopener noreferrer" hindrar den nya fliken från att komma åt min sida via window.opener -->
+            <a href="https://ethereum.org/sv/developers/" target="_blank" rel="noopener noreferrer">Ethereums utvecklardokumentation på ethereum.org<span class="visually-hidden"> (öppnas i en ny flik)</span></a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- === Projekt === -->
+    <section id="projekt" class="section" aria-labelledby="projekt-titel">
+      <h2 id="projekt-titel">Projekt</h2>
+      <p class="section__intro">Tre projekt från min tid med molnplattformar, där jag har byggt, styrt och optimerat miljöer.</p>
+
+      <!-- Varje projekt är ett article eftersom det är en fristående del som skulle gå att visa för sig -->
+      <div class="projects">
+        <article class="project" aria-labelledby="projekt-1-titel">
+          <div class="project__body">
+            <p class="project__meta">Azure · Infrastructure as Code</p>
+            <h3 id="projekt-1-titel">Three-Tier Architecture + Infrastructure as Code</h3>
+            <p>
+              En trelagersarkitektur med webb, applikation och databas i Azure, uppsatt helt med kod.
+              Nätverket är uppdelat i separata subnät med NSG-regler, så att databasen bara kan nås
+              från applikationslagret. Hela miljön kan rivas och byggas upp igen med ett kommando.
+            </p>
+            <!-- Länken är en platshållare tills projektets repo är publicerat -->
+            <a class="project__link" href="https://github.com/samlekkla">Se koden för Three-Tier-projektet på GitHub</a>
+          </div>
+          <ul class="tags" aria-label="Tekniker i projektet">
+            <li>Azure</li>
+            <li>Bicep</li>
+            <li>VNet och NSG</li>
+            <li>App Service</li>
+            <li>Azure SQL</li>
+            <li>GitHub Actions</li>
+          </ul>
+        </article>
+
+        <article class="project" aria-labelledby="projekt-2-titel">
+          <div class="project__body">
+            <p class="project__meta">Azure + AWS · FinOps</p>
+            <h3 id="projekt-2-titel">Multi-Cloud FinOps and Cost Optimization System</h3>
+            <p>
+              Ett system för att följa upp och sänka molnkostnader i både Azure och AWS. En gemensam
+              taggstrategi, budgetlarm och månadsrapporter visar vad varje miljö kostar och var det
+              finns pengar att spara, till exempel oanvända resurser och för stora virtuella maskiner.
+            </p>
+            <a class="project__link" href="https://github.com/samlekkla">Se koden för FinOps-projektet på GitHub</a>
+          </div>
+          <ul class="tags" aria-label="Tekniker i projektet">
+            <li>Azure Cost Management</li>
+            <li>AWS Cost Explorer</li>
+            <li>Budgetlarm</li>
+            <li>Taggpolicyer</li>
+            <li>PowerShell</li>
+          </ul>
+        </article>
+
+        <article class="project" aria-labelledby="projekt-3-titel">
+          <div class="project__body">
+            <p class="project__meta">Identitet · Styrning</p>
+            <h3 id="projekt-3-titel">Enterprise Hybrid Identity &amp; Azure Arc Governance</h3>
+            <p>
+              Synkroniserade identiteter mellan ett lokalt Active Directory och Microsoft Entra ID,
+              och Azure Arc för att styra lokala servrar från Azure. Azure Policy och RBAC ger samma
+              regler för säkerhet och åtkomst, oavsett om servern står i molnet eller i ett serverrum.
+            </p>
+            <a class="project__link" href="https://github.com/samlekkla">Se koden för Hybrid Identity-projektet på GitHub</a>
+          </div>
+          <ul class="tags" aria-label="Tekniker i projektet">
+            <li>Active Directory</li>
+            <li>Entra Connect</li>
+            <li>Entra ID</li>
+            <li>Azure Arc</li>
+            <li>Azure Policy</li>
+            <li>RBAC</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- === Sidofält: kompetenser ===
+         Sidofältet ligger mellan projekten och kontakten i koden. På mobil hamnar kompetenserna då
+         direkt efter projekten, och på desktop placerar Grid dem i en egen kolumn bredvid -->
+    <aside id="kompetenser" class="skills" aria-labelledby="kompetenser-titel">
+      <h2 id="kompetenser-titel">Kompetenser</h2>
+
+      <div class="skills__group">
+        <h3>Moln och infrastruktur</h3>
+        <ul class="skills__list">
+          <li>Microsoft Azure</li>
+          <li>AWS</li>
+          <li>Infrastructure as Code (Bicep, Terraform)</li>
+          <li>Nätverk och säkerhet</li>
+          <li>Linux</li>
+        </ul>
+      </div>
+
+      <div class="skills__group">
+        <h3>Identitet och styrning</h3>
+        <ul class="skills__list">
+          <li>Microsoft Entra ID</li>
+          <li>Azure Arc</li>
+          <li>Azure Policy</li>
+          <li>RBAC</li>
+        </ul>
+      </div>
+
+      <div class="skills__group">
+        <h3>Webb och verktyg</h3>
+        <ul class="skills__list">
+          <li>HTML och CSS</li>
+          <li>Git och GitHub</li>
+          <li>GitHub Actions</li>
+          <li>PowerShell</li>
+        </ul>
+      </div>
+
+      <div class="skills__group skills__group--learning">
+        <h3>Under utbildning</h3>
+        <ul class="skills__list">
+          <li>Blockchain och Ethereum</li>
+          <li>Solidity</li>
+          <li>Smarta kontrakt</li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- === Kontakt === -->
+    <section id="kontakt" class="section contact" aria-labelledby="kontakt-titel">
+      <h2 id="kontakt-titel">Kontakt</h2>
+      <p class="section__intro">Vill du prata moln, blockchain eller praktik? Skriv en rad så hör jag av mig.</p>
+
+      <div class="contact__layout">
+        <div class="contact__details">
+          <h3>Kontaktuppgifter</h3>
+          <!-- address används för kontaktuppgifter som gäller sidans ägare, alltså mig -->
+          <address>
+            <dl class="details">
+              <div class="details__item">
+                <dt>E-post</dt>
+                <dd><a href="mailto:sam.lekkla@gmail.com">sam.lekkla@gmail.com</a></dd>
+              </div>
+              <div class="details__item">
+                <dt>Ort</dt>
+                <dd>Stockholm</dd>
+              </div>
+              <div class="details__item">
+                <dt>LinkedIn</dt>
+                <dd><a href="https://www.linkedin.com/in/samlekkla/">Sams profil på LinkedIn</a></dd>
+              </div>
+              <div class="details__item">
+                <dt>GitHub</dt>
+                <dd><a href="https://github.com/samlekkla">github.com/samlekkla</a></dd>
+              </div>
+            </dl>
+          </address>
+        </div>
+
+        <!-- Sidan är statisk och ligger på GitHub Pages, som inte kan ta emot formulärdata. Därför skickas
+             formuläret till Formspree, som vidarebefordrar meddelandet till min e-post. Det fungerar utan
+             JavaScript. method="post" gör att uppgifterna skickas i själva anropet och inte syns i adressfältet -->
+        <form class="form" action="https://formspree.io/f/xzerzyar" method="post" aria-labelledby="formular-titel">
+          <h3 id="formular-titel">Skicka ett meddelande</h3>
+          <p class="form__note">Fält markerade med <span class="required" aria-hidden="true">*</span> måste fyllas i.</p>
+
+          <!-- fieldset och legend grupperar fälten så att skärmläsare läser upp vilken del av formuläret man är i -->
+          <fieldset class="form__group">
+            <legend>Dina uppgifter</legend>
+
+            <div class="form__grid">
+              <div class="field">
+                <label for="namn">Namn <span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="namn" name="namn" autocomplete="name" required>
+              </div>
+
+              <div class="field">
+                <label for="epost">E-post <span class="required" aria-hidden="true">*</span></label>
+                <!-- type="email" ger rätt tangentbord på mobil och inbyggd kontroll av formatet. name="email" gör att Formspree sätter avsändarens adress som svarsadress, så att jag kan svara direkt från mejlet -->
+                <input type="email" id="epost" name="email" autocomplete="email" required>
+              </div>
+
+              <div class="field">
+                <label for="webbplats">Webbplats</label>
+                <input type="url" id="webbplats" name="webbplats" autocomplete="url" placeholder="https://">
+              </div>
+
+              <div class="field">
+                <label for="telefon">Telefon</label>
+                <input type="tel" id="telefon" name="telefon" autocomplete="tel">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form__group">
+            <legend>Ditt ärende</legend>
+
+            <div class="field">
+              <label for="amne">Vad gäller det? <span class="required" aria-hidden="true">*</span></label>
+              <!-- Första alternativet har ett tomt värde, så required stoppar formuläret tills ett riktigt ämne valts -->
+              <select id="amne" name="amne" required>
+                <option value="">Välj ett ämne</option>
+                <option value="praktik">Praktik eller LIA</option>
+                <option value="jobb">Jobberbjudande</option>
+                <option value="samarbete">Samarbete i ett projekt</option>
+                <option value="ovrigt">Övrigt</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="meddelande">Meddelande <span class="required" aria-hidden="true">*</span></label>
+              <textarea id="meddelande" name="meddelande" rows="6" required></textarea>
+            </div>
+
+            <div class="field field--checkbox">
+              <input type="checkbox" id="samtycke" name="samtycke" value="ja" required>
+              <label for="samtycke">Jag godkänner att mina uppgifter används för att svara på meddelandet <span class="required" aria-hidden="true">*</span></label>
+            </div>
+          </fieldset>
+
+          <button class="button" type="submit">Skicka meddelande</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- === Sidfot === -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Sam Lekkla. Byggd med HTML och CSS.</p>
+      <ul class="site-footer__links">
+        <li><a href="https://github.com/samlekkla">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/samlekkla/">LinkedIn</a></li>
+        <li><a href="#top">Tillbaka till toppen</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
