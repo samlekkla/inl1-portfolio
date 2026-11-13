@@ -1,0 +1,41 @@
+name: Publicera på GitHub Pages
+
+# Körs vid varje push till main, och kan också startas manuellt under fliken Actions
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Behörigheterna som krävs för att publicera till GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Bara en publicering åt gången, så att två pushar i rad inte krockar
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Hämta koden
+        uses: actions/checkout@v4
+
+      - name: Konfigurera Pages
+        uses: actions/configure-pages@v5
+
+      # Sidan är ren HTML och CSS, så inget byggsteg behövs. Hela mappen laddas upp som den är
+      - name: Ladda upp filerna
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Publicera
+        id: deployment
+        uses: actions/deploy-pages@v4
