@@ -55,13 +55,26 @@ Brytpunkterna är satta i `em` så att layouten byts i rätt läge även när be
 
 ### Lighthouse
 
-![Resultat från Lighthouse](images/screenshots/lighthouse.png)
+Testat med Lighthouse via PageSpeed Insights på live-sidan.
+
+| | Performance | Accessibility | Best Practices | SEO |
+| --- | --- | --- | --- | --- |
+| Mobil | 98 | 100 | 100 | 100 |
+| Desktop | 100 | 100 | 100 | 100 |
+
+![Lighthouse-resultat för mobil](images/screenshots/lighthouse-mobil.png)
+
+![Lighthouse-resultat för desktop](images/screenshots/lighthouse-desktop.png)
 
 ### W3C Validator
 
-![Resultat från W3C Markup Validation Service](images/screenshots/w3c-validator.png)
+HTML:en ger 0 fel och 0 varningar i Nu Html Checker. CSS:en ger 0 fel i W3C CSS Validation Service. De varningar som finns kvar gäller CSS-variabler, som validatorn inte kan kontrollera statiskt.
+
+![Resultat från W3C Nu Html Checker](images/screenshots/w3c-validator.jpg)
 
 ### Firefox Accessibility Inspector
+
+Med "Check for issues: All Issues" hittades inga problem, och listan är tom. "Show Tabbing Order" visar att tabbordningen följer sidans visuella ordning: skip-länk, logotyp och sedan menyn.
 
 ![Resultat från Firefox Accessibility Inspector](images/screenshots/firefox-accessibility.png)
 
